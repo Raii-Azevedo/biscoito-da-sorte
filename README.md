@@ -16,7 +16,7 @@
 </p>
 
 ## Biscoito da Sorte? SÓ QUE NÃO
-<a href="url"><img src="https://github.com/Raii-Azevedo/Template-basico-react-native/blob/main/WhatsApp%20Image%202021-06-18%20at%2017.27.31.jpeg" align="left" height="480" width="300" ></a>
+<a href="url"><img src="https://github.com/Raii-Azevedo/biscoito-da-sorte/blob/master/biscoito.gif" align="left" height="480" width="300" ></a>
  
  - Biscoitinho da Desgraça, um app cheio de mensagens desmotivacionais, para você começar o dia daquele jeito!
  
