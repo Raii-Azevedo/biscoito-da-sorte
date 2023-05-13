@@ -73,7 +73,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container} >
-        <Text style={styles.titulo}>Biscoito da Desgraça</Text>
+        <Text style={styles.titulo}>Biscoito da Sorte/Text>
 
         <Image
           source={this.state.img}
