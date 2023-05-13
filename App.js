@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
- 
+
 // import { Container } from './styles';
- 
-class App extends Component{
-  constructor(props){
+
+class App extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      textoCookie: 'Sua frase desmotivacional do dia', 
+      textoCookie: 'Sua frase desmotivacional do dia',
       img: require('./img/biscoito.png'),
     };
-    
+
     this.verMensagem = this.verMensagem.bind(this);
- 
+
     this.frases = [
       'Só existe uma coisa que te separa do seu objetivo: sua capacidade',
       'Ninguém precisa te humilhar, um espelho já faz isso’',
@@ -60,85 +60,85 @@ class App extends Component{
     ];
 
   }
- 
- 
-  verMensagem(){
+
+
+  verMensagem() {
     let numeroAleatorio = Math.floor(Math.random() * this.frases.length);
     this.setState({
       textoCookie: '"' + this.frases[numeroAleatorio] + '"',
       img: require('./img/biscoitoAberto.png'),
     });
   }
-  
-  render(){
-    return(
+
+  render() {
+    return (
       <View style={styles.container} >
-        <Text style={styles.titulo}>Biscoito da Desgraça</Text> 
-      
-      <Image
-        source={this.state.img}
-        style={styles.img}
-      />
+        <Text style={styles.titulo}>Biscoito da Desgraça</Text>
 
-      <Text style={styles.textoCookie}>{this.state.textoCookie}</Text>
+        <Image
+          source={this.state.img}
+          style={styles.img}
+        />
 
-      <TouchableOpacity style={styles.botao} onPress={this.verMensagem}>
-        <View style={styles.btnArea}>
-          <Text style={styles.btnTexto}>Abrir Biscoito</Text>
-        </View>
-      </TouchableOpacity>  
+        <Text style={styles.textoCookie}>{this.state.textoCookie}</Text>
 
-      </View>   
+        <TouchableOpacity style={styles.botao} onPress={this.verMensagem}>
+          <View style={styles.btnArea}>
+            <Text style={styles.btnTexto}>Abrir Biscoito</Text>
+          </View>
+        </TouchableOpacity>
+
+      </View>
     );
   }
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop:20,
-    alignItems:'center',  
+    paddingTop: 20,
+    alignItems: 'center',
   },
 
-  titulo:{
+  titulo: {
     backgroundColor: '#dd7b22',
-    textAlign:"center",
-    color:'#fff',
-    fontSize:40,
-    paddingTop:30,
+    textAlign: "center",
+    color: '#fff',
+    fontSize: 40,
+    paddingTop: 30,
     paddingBottom: 30,
     fontWeight: 'bold',
   },
 
-  img:{
-    width:250,
-    height:250,
+  img: {
+    width: 250,
+    height: 250,
   },
 
-  textoCookie:{
+  textoCookie: {
     fontSize: 20,
     color: '#dd7b22',
-    margin:30, 
+    margin: 30,
     fontStyle: 'italic',
     textAlign: 'center',
   },
 
-  botao:{
+  botao: {
     width: 230,
     height: 50,
     borderWidth: 2,
     borderColor: '#dd7b22',
-    borderRadius:25,
+    borderRadius: 25,
   },
 
-  btnArea:{
-    flex:1,
+  btnArea: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  btnTexto:{
+  btnTexto: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#dd7b22',
