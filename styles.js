@@ -8,16 +8,22 @@ const styles = StyleSheet.create({
     backgroundColor:'#fff',
   },
 
+  video: {
+    width: '100%',
+    height: '100%',
+  },
+
   titulo: {
     backgroundColor: '#dd7b22',
-    textAlign: "center",
+    textAlign: 'center',
     color: '#fff',
-    fontSize: 40,
+    fontSize: 35,
     paddingTop: 30,
     paddingBottom: 40,
     fontWeight: 'bold',
+    paddingHorizontal: 20, // Adiciona espaço nas laterais
   },
-
+  
   img: {
     width: 250,
     height: 250,
