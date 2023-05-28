@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, AsyncStorage } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import biscoitoAbertoImg from './img/biscoitoAberto.png';
 import styles from './styles';
 import Video from 'react-native-video';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const VideoScreen = ({ onVideoEnd }) => {
   return (
