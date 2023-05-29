@@ -1,5 +1,6 @@
-import { ViewShot, captureScreen } from 'react-native-view-shot';
+import { captureScreen } from 'react-native-view-shot';
 import Share from 'react-native-share';
+
 
 const handleImagePress = async () => {
   try {

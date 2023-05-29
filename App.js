@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import Video from 'react-native-video';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ViewShot, captureScreen } from 'react-native-view-shot';
-import Share from 'react-native-share';
-
 import { handleImagePress } from './handleImagePress';
 import styles from './styles.js';
+import { ViewShot } from 'react-native-view-shot';
+
 
 const VideoScreen = ({ onVideoEnd }) => {
   const videoPath = './video/Cookie.mp4';
@@ -28,7 +27,7 @@ const VideoScreen = ({ onVideoEnd }) => {
   );
 };
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
 
@@ -180,4 +179,3 @@ class App extends Component {
   }
 }
 
-export default App;
