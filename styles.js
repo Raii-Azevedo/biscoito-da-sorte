@@ -14,12 +14,11 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    backgroundColor: '#dd7b22',
     textAlign: 'center',
-    color: '#fff',
+    color: '#dd7b22',
     fontSize: 35,
-    paddingTop: 30,
-    paddingBottom: 40,
+    paddingTop: 20,
+    paddingBottom: 20,
     fontWeight: 'bold',
     paddingHorizontal: 20, // Adiciona espaço nas laterais
   },
@@ -29,12 +28,27 @@ const styles = StyleSheet.create({
     height: 250,
   },
 
+  imagem:{
+    width: 30,
+    height: 30,
+    marginRight: 25,
+    alignSelf: 'flex-end', 
+  },
+
+  imagemCustomizada: {
+    width: 30,
+    height: 30,
+    marginRight: 25,
+    alignSelf: 'flex-end',
+  },
+
   textoCookie: {
     fontSize: 20,
     color: '#dd7b22',
     margin: 30,
     fontStyle: 'italic',
     textAlign: 'center',
+    paddingBottom:10,
   },
 
   botao: {
