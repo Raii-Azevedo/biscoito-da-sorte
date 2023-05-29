@@ -3,15 +3,14 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import Video from 'react-native-video';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { handleImagePress } from './handleImagePress';
+import frases from './frases'; // Assuming 'frases' is an array of phrases
 import styles from './styles.js';
-import { ViewShot } from 'react-native-view-shot';
-
 
 const VideoScreen = ({ onVideoEnd }) => {
   const videoPath = './video/Cookie.mp4';
 
   return (
-    <View style={styles.container}>
+    <View>
       <Video
         source={require(videoPath)}
         style={styles.video}
@@ -19,7 +18,7 @@ const VideoScreen = ({ onVideoEnd }) => {
         muted={true}
         repeat={false}
         onLoad={() => {
-          // Lógica a ser executada quando o vídeo é carregado
+          // Logic to be executed when the video is loaded
         }}
         onEnd={onVideoEnd}
       />
@@ -27,7 +26,7 @@ const VideoScreen = ({ onVideoEnd }) => {
   );
 };
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -37,7 +36,6 @@ export default class App extends Component {
       img: require('./img/biscoito.png'),
       ativo: true,
       tempoRestante: null,
-      segundoBotaoAtivo: true,
     };
 
     this.verMensagem = this.verMensagem.bind(this);
@@ -92,13 +90,11 @@ export default class App extends Component {
   }
 
   verMensagem() {
-    const frases = require('./frases');
-
     if (this.state.ativo) {
-      let numeroAleatorio = Math.floor(Math.random() * frases.length);
+      const numeroAleatorio = Math.floor(Math.random() * frases.length);
       this.setState(
         {
-          textoCookie: '"' + frases[numeroAleatorio] + '"',
+          textoCookie: `"${frases[numeroAleatorio]}"`,
           img: require('./img/biscoitoAberto.png'),
           ativo: false,
         },
@@ -123,59 +119,59 @@ export default class App extends Component {
     const minutos = Math.floor((tempoRestante % 3600) / 60);
     const segundos = tempoRestante % 60;
 
-    return `${horas < 10 ? '0' + horas : horas}:${minutos < 10 ? '0' + minutos : minutos
-      }:${segundos < 10 ? '0' + segundos : segundos}`;
+    return `${horas < 10 ? '0' + horas : horas}:${minutos < 10 ? '0' + minutos : minutos}:${segundos < 10 ? '0' + segundos : segundos}`;
   }
 
   render() {
     const { showVideo } = this.state;
 
     return (
-      <ViewShot>
-        <View style={{ backgroundColor: '#dd7b22', flex: 1 }}>
-          {showVideo ? (
-            <VideoScreen onVideoEnd={() => this.setState({ showVideo: false })} />
-          ) : (
-            <View style={{ flex: 1, margin: 15, backgroundColor: '#fff', borderRadius: 10 }}>
-              <View style={styles.container}>
-                {/* Primeiro botão */}
-                <TouchableOpacity onPress={handleImagePress}>
-                  <Image
-                    source={require('./img/share.png')}
-                    style={[styles.imagem, { position: 'relative', left: 130 }]}
-                  />
-                </TouchableOpacity>
+      <View style={{ backgroundColor: '#dd7b22', flex: 1 }}>
+        {showVideo ? (
+          <VideoScreen onVideoEnd={() => this.setState({ showVideo: false })} />
+        ) : (
+          <View style={{ flex: 1, margin: 15, backgroundColor: '#fff', borderRadius: 10 }}>
+            <View style={styles.container}>
+              {/* Primeiro botão */}
+              <TouchableOpacity onPress={handleImagePress}>
+                <Image
+                  source={require('./img/share.png')}
+                  style={[styles.imagem, { position: 'relative', left: 130 }]}
+                />
+              </TouchableOpacity>
 
-                <Text style={[styles.titulo, { fontSize: 30, fontWeight: 'bold', marginBottom: 20 }]}>
-                  BISCOITO DA SORTE
-                </Text>
+              <Text style={[styles.titulo, { fontSize: 30, fontWeight: 'bold', marginBottom: 20 }]}>
+                BISCOITO DA SORTE
+              </Text>
 
-                <Image source={this.state.img} style={styles.img} />
+              <Image source={this.state.img} style={styles.img} />
 
-                <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 18, marginTop: 20 }]}>
-                  {this.state.textoCookie}
-                </Text>
+              <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 18, marginTop: 20 }]}>
+                {this.state.textoCookie}
+              </Text>
 
-                {/* Segundo botão */}
-                <TouchableOpacity
-                  style={[styles.botao, !this.state.ativo && styles.botaoInativo]}
-                  onPress={this.verMensagem}
-                  disabled={!this.state.segundoBotaoAtivo} // Use a flag do estado para controlar a ativação do segundo botão
-                >
-                  <View style={styles.btnArea}>
-                    <Text style={styles.btnTexto}>ABRIR BISCOITO</Text>
-                  </View>
-                </TouchableOpacity>
+              {/* Segundo botão */}
+              <TouchableOpacity
+                style={[styles.botao, !this.state.ativo && styles.botaoInativo]}
+                onPress={this.verMensagem}
+                disabled={!this.state.ativo}
+              >
+                <View style={styles.btnArea}>
+                  <Text style={styles.btnTexto}>ABRIR BISCOITO</Text>
+                </View>
+              </TouchableOpacity>
 
-                <Text style={[styles.cronometro, { color: '#888', fontSize: 16, marginTop: 10 }]}>
-                  {this.state.ativo ? '' : `Você poderá abrir um novo cookie em: ${this.formatarTempoRestante()}`}
-                </Text>
-              </View>
+
+
+              <Text style={[styles.cronometro, { color: '#888', fontSize: 16, marginTop: 10 }]}>
+                {this.state.ativo ? '' : `Você poderá abrir um novo cookie em: ${this.formatarTempoRestante()}`}
+              </Text>
             </View>
-          )}
-        </View>
-      </ViewShot>
+          </View>
+        )}
+      </View>
     );
   }
 }
 
+export default App;

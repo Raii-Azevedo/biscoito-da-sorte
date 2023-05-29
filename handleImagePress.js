@@ -1,8 +1,7 @@
 import { captureScreen } from 'react-native-view-shot';
 import Share from 'react-native-share';
 
-
-const handleImagePress = async () => {
+export const handleImagePress = async () => {
   try {
     // Captura a tela como uma imagem
     const uri = await captureScreen({
@@ -36,5 +35,3 @@ const handleImagePress = async () => {
     console.log('Erro ao compartilhar:', error.message);
   }
 };
-
-export default handleImagePress;
