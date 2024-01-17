@@ -160,12 +160,6 @@ class App extends Component {
                   <Text style={styles.btnTexto}>ABRIR BISCOITO</Text>
                 </View>
               </TouchableOpacity>
-
-
-
-              <Text style={[styles.cronometro, { color: '#888', fontSize: 16, marginTop: 10 }]}>
-                {this.state.ativo ? '' : `Você poderá abrir um novo cookie em: ${this.formatarTempoRestante()}`}
-              </Text>
             </View>
           </View>
         )}
