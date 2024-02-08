@@ -140,7 +140,7 @@ class App extends Component {
                 />
               </TouchableOpacity>
 
-              <Text style={[styles.titulo, { fontSize: 32, fontWeight: 'bold', marginBottom: 20, marginTop: 25 }]}>
+              <Text style={[styles.titulo, { fontSize: 30, fontWeight: 'bold', marginBottom: 20, marginTop: 25 }]}>
                 BISCOITO DA SORTE
               </Text>
 
