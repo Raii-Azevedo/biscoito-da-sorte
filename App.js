@@ -146,7 +146,7 @@ class App extends Component {
 
               <Image source={this.state.img} style={styles.img} />
 
-              <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 25, marginTop: 50 }]}>
+              <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 25, marginTop: 25 }]}>
                 {this.state.textoCookie}
               </Text>
 
