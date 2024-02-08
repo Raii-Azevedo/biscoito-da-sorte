@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     alignItems: 'center',
-    backgroundColor:'#fff',
+    backgroundColor:'fff',
   },
 
   video: {

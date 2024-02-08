@@ -126,7 +126,7 @@ class App extends Component {
     const { showVideo } = this.state;
 
     return (
-      <View style={{ backgroundColor: '#dd7b22', flex: 1 }}>
+      <View style={{ backgroundColor: '#fff', flex: 1 }}>
         {showVideo ? (
           <VideoScreen onVideoEnd={() => this.setState({ showVideo: false })} />
         ) : (
@@ -146,7 +146,7 @@ class App extends Component {
 
               <Image source={this.state.img} style={styles.img} />
 
-              <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 18, marginTop: 20 }]}>
+              <Text style={[styles.textoCookie, { color: '#dd7b22', fontSize: 25, marginTop: 50 }]}>
                 {this.state.textoCookie}
               </Text>
 
